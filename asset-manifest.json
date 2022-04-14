@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/candfcnc/static/css/main.31d6cfe0.css",
+    "main.js": "/candfcnc/static/js/main.6fe04db4.js",
+    "static/js/787.59382d08.chunk.js": "/candfcnc/static/js/787.59382d08.chunk.js",
+    "index.html": "/candfcnc/index.html",
+    "main.6fe04db4.js.map": "/candfcnc/static/js/main.6fe04db4.js.map",
+    "787.59382d08.chunk.js.map": "/candfcnc/static/js/787.59382d08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.6fe04db4.js"
+  ]
+}
