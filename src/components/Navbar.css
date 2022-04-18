@@ -1,0 +1,24 @@
+#navbar {
+    width: 100vw;
+    height: 100px;
+    background-color: #FFF6F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#links {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 3vw;
+}
+
+#header-logo {
+    height: 85px;
+    width: auto;
+    margin-left: 6vw;
+}
+
