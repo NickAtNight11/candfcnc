@@ -2,23 +2,32 @@
     width: 100vw;
     height: 100px;
     background-color: #FFF6F5;
+    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    z-index: 1;
 }
 
 #links {
-    width: 400px;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: 3vw;
 }
 
-#header-logo {
-    height: 85px;
-    width: auto;
+#header-logo-link { 
     margin-left: 6vw;
 }
 
+#header-logo {
+    height: 85px;
+    width: auto;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: black;
+}
