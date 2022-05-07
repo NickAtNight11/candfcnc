@@ -1,0 +1,16 @@
+#creation-box {
+    height: 450px;
+    width: 400px;
+    margin-bottom: 50px;
+    background-color: rgba(247, 246, 242, 0.88);
+    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#creation-image {
+    height: 350px;
+    width: 350px;
+    background-color: gray;
+}
