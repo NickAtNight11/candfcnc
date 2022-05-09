@@ -24,6 +24,10 @@
     justify-content: center;
 }
 
+.arrow-container:hover {
+    cursor: pointer;
+}
+
 .arrow-point {  
     width: 50px;
     height: 4px;
@@ -41,6 +45,18 @@
 .arrow-bottom {
     margin-top: 29px;
 }
+
+.slider-fade {
+    opacity: 0;
+    transition-duration: 0.5s;
+    transform: scale(0.8);
+}
+
+.slider-unfade {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
 
 #slider {
     width: 100vw;
@@ -70,6 +86,15 @@
     width: 40vw;
     background-color: rgba(247, 246, 242, 0.88);
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider-image {
+    height: 40vh;
+    width: auto;
+    max-width: 35vw;
 }
 
 #dot-container {
