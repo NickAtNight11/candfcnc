@@ -1,13 +1,9 @@
 import React from 'react'
-import Background from '../../images/pexels-fwstudio-129731.jpg'
 import ContactBox from '../ContactBox'
 
 function Contact() {
   return (
     <div>
-        <div className='background-container'>
-            <img src={Background} alt="C&F" className='background-image'/>
-        </div>
         <div className='clear-container'>
             <h1>Try Us Today</h1>
             <h3><i>Contact us and learn more about our pricing!</i></h3>

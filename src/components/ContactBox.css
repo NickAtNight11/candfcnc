@@ -3,17 +3,49 @@
     width: 80vw;
     background-color: rgba(247, 246, 242, 0.88);
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.5);
-    margin: 50px 0 50px 0;
+    margin: 3vw 0 3vw 0;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    z-index: 1;
+    text-align: left;
 }
 
 #contact-box-grid {
+    height: 50vh;
+    width: 75vw;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
-    grid-template-rows: 150px 50px 100px 50px;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    grid-template-rows: 4fr 2fr 2fr 1fr;
+}
+
+@media screen and (max-width: 1000px) {
+    #contact-box > h2 {
+        font-size: 36px;
+    }
+
+    #contact-box-grid > h3 {
+        font-size: 24px;
+    }
+
+    #contact-box {
+        height: 50vw;
+    }
+
+    #contact-box-grid {
+        height: 40vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #contact-box-grid > h3 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #contact-box-grid > h3 {
+        font-size: 12px;
+    }
 }

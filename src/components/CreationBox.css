@@ -12,5 +12,16 @@
 #creation-image {
     height: 350px;
     width: 350px;
-    background-color: gray;
+}
+
+@media screen and (max-width: 700px) {
+    #creation-box {
+        height: 350px;
+        width: 300px;
+    }
+
+    #creation-image {
+        height: 250px;
+        width: 250px;
+    }
 }

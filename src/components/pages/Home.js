@@ -1,14 +1,10 @@
 import React from 'react'
-import Background from '../../images/pexels-fwstudio-129731.jpg'
 import Slider from '../Slider'
 
 
 function Home() {
   return (
     <div>
-        <div className='background-container'>
-            <img src={Background} alt="C&F" className='background-image'/>
-        </div>
         <Slider />
         <div className='page-container'>
             <div className='text-container'>

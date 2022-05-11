@@ -1,17 +1,9 @@
 import React from 'react'
-import Background from '../../images/pexels-fwstudio-129731.jpg'
 import CreationBox from '../CreationBox'
 
 function Creations() {
   return (
     <div>
-        <div className='background-container'>
-            <img src={Background} alt="C&F" className='background-image'/>
-            <img src={Background} alt="C&F" className='background-image'/>
-            <img src={Background} alt="C&F" className='background-image'/>
-            <img src={Background} alt="C&F" className='background-image'/>
-            <img src={Background} alt="C&F" className='background-image'/>
-        </div>
         <div className='clear-container'>
             <h1>Our Creations</h1>
             <h3><i>Check out some of our work!</i></h3>

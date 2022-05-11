@@ -7,11 +7,10 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 1;
 }
 
 #links {
-    width: 500px;
+    width: 50vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,4 +29,32 @@
 .navbar-link {
     text-decoration: none;
     color: black;
+}
+
+@media screen and (max-width: 700px) {
+    #navbar {
+        height: 75px;
+    }
+
+    #header-logo {
+        height: 60px;
+    }
+
+    #header-logo-link { 
+        margin-left: 3vw;
+    }
+
+    .navbar-link > h4{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #links {
+        width: 70vw;
+    }
+
+    #header-logo {
+        height: 40px;
+    }
 }
