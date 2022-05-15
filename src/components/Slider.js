@@ -47,7 +47,7 @@ function Slider() {
                     <div className='arrow-point arrow-point-down arrow-bottom'></div>
                 </div>
                 <div id='slider-image-container'>
-                    <img id='slider-image' src='' alt='C & F CNC and Laser Creations'/>
+                    <img id='slider-image' src='' alt='CNC Gifts and Laser Engraving Creations'/>
                 </div>
                 <div className='arrow-container' onClick={() => {if(count === 6) {setCount(0)} else {setCount(count+1)}}}>
                     <div className='arrow-point arrow-point-down'></div>
