@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/candfcnc/static/css/main.fa497d73.css",
-    "main.js": "/candfcnc/static/js/main.214ba013.js",
+    "main.css": "/candfcnc/static/css/main.53ac5cae.css",
+    "main.js": "/candfcnc/static/js/main.bc2380ba.js",
     "static/js/787.59382d08.chunk.js": "/candfcnc/static/js/787.59382d08.chunk.js",
     "static/media/Home Page 4.jpg": "/candfcnc/static/media/Home Page 4.18ea7c24d0121adcbf8d.jpg",
     "static/media/Plaques 3.jpg": "/candfcnc/static/media/Plaques 3.4be4f53179dec504aedd.jpg",
@@ -43,12 +43,12 @@
     "static/media/Other 1.png": "/candfcnc/static/media/Other 1.5d5c3cc515914a1f43f4.png",
     "static/media/Cups 1.png": "/candfcnc/static/media/Cups 1.750f54b8d9b1e67f6c90.png",
     "index.html": "/candfcnc/index.html",
-    "main.fa497d73.css.map": "/candfcnc/static/css/main.fa497d73.css.map",
-    "main.214ba013.js.map": "/candfcnc/static/js/main.214ba013.js.map",
+    "main.53ac5cae.css.map": "/candfcnc/static/css/main.53ac5cae.css.map",
+    "main.bc2380ba.js.map": "/candfcnc/static/js/main.bc2380ba.js.map",
     "787.59382d08.chunk.js.map": "/candfcnc/static/js/787.59382d08.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa497d73.css",
-    "static/js/main.214ba013.js"
+    "static/css/main.53ac5cae.css",
+    "static/js/main.bc2380ba.js"
   ]
 }
