@@ -8,7 +8,7 @@
 body {
     background-image: url('./images/pexels-fwstudio-129731.jpg');
     background-repeat: repeat-y;
-    background-size: contain;
+    background-size: 100% auto;
 }
 
 h1 {
