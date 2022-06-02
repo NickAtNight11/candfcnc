@@ -1,3 +1,12 @@
+.form-credential {
+    height: 1.5vw;
+    font-size: 24px;
+}
+
+.form-credential:user-invalid{
+    border-color: red;
+}
+
 #contact-box {
     height: 70vh;
     width: 80vw;
@@ -12,44 +21,118 @@
     text-align: left;
 }
 
-#contact-box-grid {
-    height: 50vh;
+#contact-box-inner {
+    height: 55vh;
     width: 75vw;
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr;
-    grid-template-rows: 4fr 2fr 2fr 1fr;
+    display: flex;
+    justify-content: center;
 }
 
+#contact-box-form {
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#form-message {
+    height: 8vw;
+    font-size: 24px;
+}
+
+#form-send {
+    align-self: flex-end;
+    width: 75px;
+    height: 30px;
+    margin-top: 1vw;
+    font-size: 24px;
+    background-color: #FFF6F5;
+}
+
+#contact-box-seperator {
+    height: 100%;
+    width: 5px;
+    margin: 0 4vw 0 4vw;
+    background-color: black;
+    flex-shrink: 0;
+}
+
+#contact-box-info { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
 @media screen and (max-width: 1000px) {
+    .form-credential {
+        height: 5vw;
+    }
+    
+    #contact-box {
+        height: 75vh;
+        justify-content: flex-start;
+    }
+
+    #contact-box-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #contact-box-info { 
+        width: 100%;
+        height: 20vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #contact-box-form {
+        width: 100%;
+        height: 40vh;
+    }
+
+    #form-message {
+        height: 20vw;
+    }
+
     #contact-box > h2 {
+        margin-top: 2vh;
         font-size: 36px;
     }
 
-    #contact-box-grid > h3 {
-        font-size: 24px;
-    }
-
-    #contact-box {
-        height: 50vw;
-    }
-
-    #contact-box-grid {
-        height: 40vw;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    #contact-box-grid > h3 {
+    #contact-box-info > h4 {
+        margin-bottom: 2vh;
         font-size: 16px;
+    }
+
+
+    #contact-box-seperator {
+        width: 100%;
+        height: 5px;
+        margin: 4vh 0 4vh 0;
     }
 }
 
 @media screen and (max-width: 500px) {
-    #contact-box > h2 {
-        font-size: 24px;
+    .form-credential {
+        font-size: 4vw;
     }
 
-    #contact-box-grid > h3 {
+    #contact-box {
+        height: 65vh;
+    }
+
+    #contact-box-info > h4 {
         font-size: 12px;
+    }
+
+    #contact-box-info { 
+        height: 15vh;
+    }
+
+    #form-message {
+        font-size: 4vw;
     }
 }
