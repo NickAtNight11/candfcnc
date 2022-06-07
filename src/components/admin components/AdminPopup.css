@@ -1,0 +1,61 @@
+.admin-popup-text {
+    margin-left: 1vw;
+}
+
+.admin-popup-visible {
+    display: flex;
+}
+
+.admin-popup-invisible {
+    display: none;
+}
+
+#admin-popup {
+    width: 30vw;
+    height: 50vh;
+    background-color: #FFF6F5;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0 12px 6px rgba(0, 0, 0, 0.75); 
+    border: thin solid black;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#admin-popup-top {
+    display: flex;
+    flex-direction: column;
+}
+
+#admin-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#admin-popup-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 5vh 20vh 5vh;
+    justify-items: flex-start;
+}
+
+#admin-popup-message {
+    width: 90%;
+    height: 6vh;
+}
+
+#admin-popup-image {
+    width: 15vh;
+    height: 18vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#admin-popup-image > div{
+    margin: 0;
+}

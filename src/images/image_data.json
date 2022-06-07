@@ -1,0 +1,153 @@
+{
+    "cnc_plaques": [
+         {
+             "img_name": "Plaques 1.png",
+             "alt": "law enforcement wood plaque for sheriff"
+         },
+         {
+             "img_name": "Plaques 2.png",
+             "alt": "law enforcement wood plaque for police"
+         },
+         {
+             "img_name": "Plaques 3.jpg",
+             "alt": "law enforcement wood plaque for judge"
+         },
+         {
+             "img_name": "Plaques 4.png",
+             "alt": "law enforcement wood plaque for sheriff"
+         },
+         {
+             "img_name": "Plaques 5.png",
+             "alt": "law enforcement wood plaque for judge"
+         },
+         {
+             "img_name": "Plaques 6.jpg",
+             "alt": "military wood plaque for Navy"
+         },
+         {
+             "img_name": "Plaques 7.jpg",
+             "alt": "law enforcement wood plaque for DPS trooper"
+         }
+     ],
+
+     "cnc_signs": [
+        {
+            "img_name": "Signs 3.png",
+            "alt": "family wooden hanging sign"
+        },
+        {
+            "img_name": "Signs 5.png",
+            "alt": "colored wooden Texas sign"
+        },
+        {
+            "img_name": "Signs 6.png",
+            "alt": "John Wayne wooden sign"
+        },
+        {
+            "img_name": "Signs 7.png",
+            "alt": "car wash business wooden sign"
+        },
+        {
+            "img_name": "Signs 8.png",
+            "alt": "family wooden hanging sign"
+        },
+        {
+            "img_name": "Signs 9.png",
+            "alt": "ship steering wheel wooden sign"
+        },
+        {
+            "img_name": "Signs 10.JPG",
+            "alt": "colored snake wooden sign"
+        },
+        {
+            "img_name": "Signs 13.png",
+            "alt": "family reunion wooden sign"
+        }
+    ],
+
+    "cnc_misc": [
+        {
+            "img_name": "Other 1.png",
+            "alt": "Texas wooden mirror"
+        },
+        {
+            "img_name": "Other 6.jpg",
+            "alt": "Wine glass and bottle holder"
+        }
+    ],
+
+    "laser_signs": [
+        {
+            "img_name": "Signs 1.png",
+            "alt": "engraved bulldogs mascot wooden sign"
+        },
+        {
+            "img_name": "Signs 2.jpg",
+            "alt": "engraved circular football sign"
+        },
+        {
+            "img_name": "Signs 4.png",
+            "alt": "engraved Aztec wall hanging"
+        },
+        {
+            "img_name": "Signs 11.jpg",
+            "alt": "engraved circular compass sign"
+        },
+        {
+            "img_name": "Signs 12.jpg",
+            "alt": "engraved circular wildcat sports sign"
+        }
+    ],
+
+    "laser_cups": [
+        {
+            "img_name": "Cups 1.png",
+            "alt": "engraved police tumbler cup"
+        },
+        {
+            "img_name": "Cups 2.png",
+            "alt": "engraved nurse tumbler cup"
+        },
+        {
+            "img_name": "Cups 6.png",
+            "alt": "engraved American helmet tumbler cup"
+        }
+    ],
+
+    "laser_flasks": [
+        {
+            "img_name": "Other 2.png",
+            "alt": "engraved name flask"
+        },
+        {
+            "img_name": "Other 3.png",
+            "alt": "engraved quote flask"
+        }
+    ],
+
+    "laser_jewelry": [
+        {
+            "img_name": "Jewelry 1.png",
+            "alt": "engraved tree wooden jewelry box"
+        },
+        {
+            "img_name": "Jewelry 2.png",
+            "alt": "engraved cross wooden jewelry box"
+        },
+        {
+            "img_name": "Jewelry 3.png",
+            "alt": "engraved grapes wooden jewelry box"
+        }
+    ],
+
+    "laser_misc": [
+        {
+            "img_name": "Other 4.jpg",
+            "alt": "engraved mason jar box"
+        },
+        {
+            "img_name": "Other 5.jpg",
+            "alt": "3D wolf animal cutout puzzle"
+        }
+    ]
+ }
