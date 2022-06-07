@@ -2,11 +2,26 @@
     height: 450px;
     width: 400px;
     margin-bottom: 50px;
+}
+
+#creation-background {
+    height: 450px;
+    width: 400px;
     background-color: rgba(247, 246, 242, 0.88);
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#creation-background:hover {
+    transform: scale(1.25) translate(0, 50px);
+    box-shadow: 0 12px 6px rgba(0, 0, 0, 0.75);
+    transition-duration: 2s;
+}
+
+#creation-background:not(:hover) {
+    transition-duration: 1s;
 }
 
 #creation-image {
@@ -16,6 +31,11 @@
 
 @media screen and (max-width: 700px) {
     #creation-box {
+        height: 350px;
+        width: 300px;
+    }
+
+    #creation-background {
         height: 350px;
         width: 300px;
     }

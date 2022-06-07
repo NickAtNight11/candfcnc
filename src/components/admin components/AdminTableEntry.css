@@ -1,0 +1,31 @@
+
+
+
+
+#admin-table-entry {
+    height: 5vh;
+    width: 65vw;
+    background-color: #F7F6F2;
+    border-bottom: thin solid black;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#admin-table-entry:hover {
+    background-color: gray;
+}
+
+#table-item-left {
+    justify-self: start;
+    margin-left: 2vw;
+}
+
+#table-item-right {
+    justify-self: end;
+    margin-right: 2vw;
+}
+
+#table-item-right > i {
+    margin-left: 1vw;
+}

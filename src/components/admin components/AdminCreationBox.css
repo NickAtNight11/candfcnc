@@ -1,0 +1,16 @@
+#admin-creation-box {
+    height: 15vh;
+    width: 12vh;
+    background-color: rgba(247, 246, 242, 0.88);
+    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#admin-creation-image {
+    height: 10vh;
+    width: 10vh;
+}
