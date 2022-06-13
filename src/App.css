@@ -68,6 +68,10 @@ h5 {
     flex-wrap: wrap;
 }
 
+.error-container {
+    height: 80vh;
+}
+
 .subtitle {
     margin: 50px 0 60px 0;
 }

@@ -10,6 +10,13 @@
     cursor: pointer;
 }
 
+.admin-button {
+    margin-top: 3vh;
+    position: absolute;
+    top: -10.5vh;
+    right: 7vw;
+}
+
 .admin-box-container {
     height: 25vh;
     width: 65vw;
@@ -18,17 +25,8 @@
     margin-bottom: 2vh;
 }
 
-.admin-buttons {
-    align-self: flex-end;
-    margin-bottom: 2vh;
-}
-
-.admin-buttons > button {
-    margin-right: 1vw;
-}
-
 #admin-box {
-    height: 70vh;
+    height: 65vh;
     width: 70vw;
     background-color: rgba(247, 246, 242, 0.88);
     margin: 10vh 0 10vh 0;

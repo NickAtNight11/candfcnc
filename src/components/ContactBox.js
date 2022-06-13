@@ -8,10 +8,10 @@ function ContactBox() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm('service_vv2di2t', 'c&f_contact_form', form.current, 'IM4DbB_TEKpV6HsXa')
+    emailjs.sendForm(process.env.REACT_APP_EMAIL_ID, 'c&f_contact_form', form.current, process.env.REACT_APP_PUBLIC_KEY)
     .then((result) => {
       console.log(result.text);
+      document.getElementById("contact-box-confirmation").className="contact-box-conf-visible";
   }, (error) => {
       console.log(error.text);
   });
@@ -31,6 +31,7 @@ function ContactBox() {
           <input type="text" name="subject" className="form-credential" />
           <label>Message</label>
           <textarea name="message" id="form-message"/>
+          <h3 id="contact-box-confirmation" className="contact-box-conf-invisible"><i>Message Sent</i></h3>
           <input type="submit" value="Send" id="form-send"/>
         </form>
         <div id="contact-box-seperator"/>

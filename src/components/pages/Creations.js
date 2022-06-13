@@ -1,7 +1,10 @@
 import React, {useState, useEffect } from 'react'
 import CreationBox from '../CreationBox'
 
-function Creations({ ImageData }) {
+import { db } from '../../firebase-config'
+import { collection, orderBy, query, getDocs } from 'firebase/firestore'
+
+function Creations() {
   const [cncplaques, setCncPlaques] = useState(null);
   const [cncsigns, setCncSigns] = useState(null);
   const [cncmisc, setCncMisc] = useState(null);
@@ -11,34 +14,25 @@ function Creations({ ImageData }) {
   const [laserjewelry, setLaserJewelry] = useState(null);
   const [lasermisc, setLaserMisc] = useState(null);
 
-  let importImages = ((r) => {
-    let images = {};
-    r.keys().map((item) => {return images[item.replace('./', '')] = r(item); });
-    return images;
+  let getCollection = ((c) => {
+    const collectionRef = collection(db, c);
+    return query(collectionRef, orderBy("img_name"))
   });
 
   useEffect(() => {
-    let images;
-    function setImages(data) {
-      images = importImages(require.context('../../images/cnc plaques', false, /\.(png|JPG|jpe?g|svg)$/));
-      setCncPlaques(data.cnc_plaques.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/cnc signs', false, /\.(png|JPG|jpe?g|svg)$/));
-      setCncSigns(data.cnc_signs.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/cnc misc', false, /\.(png|JPG|jpe?g|svg)$/));
-      setCncMisc(data.cnc_misc.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/laser signs', false, /\.(png|JPG|jpe?g|svg)$/));
-      setLaserSigns(data.laser_signs.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/cups', false, /\.(png|JPG|jpe?g|svg)$/));
-      setLaserCups(data.laser_cups.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/flasks', false, /\.(png|JPG|jpe?g|svg)$/));
-      setLaserFlasks(data.laser_flasks.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/jewelry', false, /\.(png|JPG|jpe?g|svg)$/));
-      setLaserJewelry(data.laser_jewelry.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
-      images = importImages(require.context('../../images/laser misc', false, /\.(png|JPG|jpe?g|svg)$/));
-      setLaserMisc(data.laser_misc.map((item) => <CreationBox key={item.img_name} image={images[item.img_name]} imagedesc={item.alt}/>));
+    const getPics = async (s) => {
+      const data = await getDocs(getCollection(s));
+      return data.docs.map((item) => ({...item.data(), id: item.id}));  
     }
-    setImages(ImageData);  
-  }, [ImageData]);
+    getPics("cnc plaques").then((value) => {setCncPlaques(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("cnc signs").then((value) => {setCncSigns(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("cnc misc").then((value) => {setCncMisc(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("laser signs").then((value) => {setLaserSigns(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("laser cups").then((value) => {setLaserCups(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("laser flasks").then((value) => {setLaserFlasks(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("laser jewelry boxes").then((value) => {setLaserJewelry(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+    getPics("laser misc").then((value) => {setLaserMisc(value.map((item) => (<CreationBox key={item.img_name} image={item.img} imagedesc={item.alt}/>)));});
+  }, []);
 
   return (
     <div>

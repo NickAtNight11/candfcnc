@@ -1,67 +1,80 @@
 import React, {useState, useEffect} from 'react'
 import './Slider.css'
-import sliderimage1 from '../images/homepage/Home Page 1.jpg'
-import sliderimage2 from '../images/homepage/Home Page 2.jpg'
-import sliderimage3 from '../images/homepage/Home Page 3.jpg'
-import sliderimage4 from '../images/flasks/Other 2.png'
-import sliderimage5 from '../images/homepage/Home Page 4.jpg'
-import sliderimage6 from '../images/homepage/Home Page 5.jpg'
-import sliderimage7 from '../images/jewelry/Jewelry 1.png'
-
+import { db } from '../firebase-config'
+import { collection, orderBy, query, getDocs } from 'firebase/firestore'
 
 function Slider() {
     const [count, setCount] = useState(0);
+    const [dots, setDots] = useState(null);
+    const [beginSlide, setBeginSlide] = useState(false);
     const [prevcount, setPrevCount] = useState(0);
+    const [photos, setPhotos] = useState([]);
+    const [currentPhoto, setCurrentPhoto] = useState(null);
     let change = "";
     let reset = "";
-    let photos = [sliderimage1, sliderimage2, sliderimage3, sliderimage4, sliderimage5, sliderimage6, sliderimage7];
+
+    let getCollection = ((c) => {
+        const collectionRef = collection(db, c);
+        return query(collectionRef, orderBy("img_name"))
+    });
+    
+    useEffect(() => {
+        const getPics = async (s) => {
+          const data = await getDocs(getCollection(s));
+          return data.docs.map((item) => ({...item.data(), id: item.id}));  
+        }
+        getPics("home page")
+            .then((value) => {
+                setPhotos(value.map((element, index) => (<img id='slider-image' key={index} src={element.img} alt='CNC Gifts and Laser Engraving Creations'/>)));
+            })
+    }, []);
 
 
-    useEffect(() => {   // eslint-disable-next-line
-        change = "dot-"+ count; // eslint-disable-next-line
-        reset = "dot-"+ prevcount;
-        document.getElementById('slider-image-container').className = 'slider-fade';
-        setTimeout(() => {document.getElementById('slider-image').src = photos[count];}, 500);
-        setTimeout(() => {document.getElementById('slider-image-container').className = 'slider-unfade'}, 500);
-        document.getElementById(reset).className = 'slider-dot-open';
-        document.getElementById(change).className = 'slider-dot-closed';
-        setPrevCount(count);
-        const timer = setTimeout(() => {
-            if(count === 6) {
-                setCount(0);
-            } 
-            else {
-                setCount(count+1);
+    useEffect(() => {
+        if(photos.length > 0) {
+            setDots(photos.map((element, index) => <div key={index} id={"dot-" + index} className={ index === 0 ? 'slider-dot-closed' : 'slider-dot-open'} />));
+            setBeginSlide(true);     
+        }
+    }, [photos]);
+    
+    useEffect(() => {
+        if(beginSlide) {// eslint-disable-next-line
+            change = "dot-"+ count; // eslint-disable-next-line
+            reset = "dot-"+ prevcount;
+            document.getElementById('slider-image-container').className = 'slider-fade';
+            setTimeout(() => {setCurrentPhoto(photos[count])}, 500);
+            setTimeout(() => {document.getElementById('slider-image-container').className = 'slider-unfade'}, 500);
+            if(document.getElementById(change) != null) {
+                document.getElementById(reset).className = 'slider-dot-open';
+                document.getElementById(change).className = 'slider-dot-closed';
             }
-        }, 5000);
-        return () => clearTimeout(timer);
-    }, [count]);
+            setPrevCount(count);
+            const timer = setTimeout(() => {
+                setCount((count+1) % photos.length);
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [count, beginSlide]);
     
 
     return (
         <div id='slider'>
             <h3 id="slider-text"><i>Custom Engravings and CNC Gifts, Made Personal for You!</i></h3>
             <div id='slider-responsive-container'>
-                <div className='arrow-container' onClick={() => {if(count === 0) {setCount(6)} else {setCount(count-1)}}}>
+                <div className='arrow-container' onClick={() => {setCount((((count-1) % photos.length) + photos.length) % photos.length);}}>
                     <div className='arrow-point arrow-point-up'></div>
                     <div className='arrow-point arrow-point-down arrow-bottom'></div>
                 </div>
                 <div id='slider-image-container'>
-                    <img id='slider-image' src='' alt='CNC Gifts and Laser Engraving Creations'/>
+                    {currentPhoto}
                 </div>
-                <div className='arrow-container' onClick={() => {if(count === 6) {setCount(0)} else {setCount(count+1)}}}>
+                <div className='arrow-container' onClick={() => {setCount((count+1) % photos.length);}}>
                     <div className='arrow-point arrow-point-down'></div>
                     <div className='arrow-point arrow-point-up arrow-bottom'></div>
                 </div>
             </div>
             <div id='dot-container'>
-                <div id='dot-0' className='slider-dot-closed'></div>
-                <div id='dot-1' className='slider-dot-open'></div>
-                <div id='dot-2' className='slider-dot-open'></div>
-                <div id='dot-3' className='slider-dot-open'></div>
-                <div id='dot-4' className='slider-dot-open'></div>
-                <div id='dot-5' className='slider-dot-open'></div>
-                <div id='dot-6' className='slider-dot-open'></div>
+                {dots}
             </div>
         </div>
     )
