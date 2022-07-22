@@ -10,6 +10,8 @@ function Slider() {
     const [prevcount, setPrevCount] = useState(0);
     const [photos, setPhotos] = useState([]);
     const [currentPhoto, setCurrentPhoto] = useState(null);
+    const [photoChange, setPhotoChange] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
     let change = "";
     let reset = "";
 
@@ -25,7 +27,7 @@ function Slider() {
         }
         getPics("home page")
             .then((value) => {
-                setPhotos(value.map((element, index) => (<img id='slider-image' key={index} src={element.img} alt='CNC Gifts and Laser Engraving Creations'/>)));
+                setPhotos(value.map((element, index) => (<img id='slider-image' key={index} src={element.img} alt='CNC Gifts and Laser Engraving Creations' onLoad={() => setImageLoaded(true)}/>)));
             })
     }, []);
 
@@ -43,7 +45,8 @@ function Slider() {
             reset = "dot-"+ prevcount;
             document.getElementById('slider-image-container').className = 'slider-fade';
             setTimeout(() => {setCurrentPhoto(photos[count])}, 500);
-            setTimeout(() => {document.getElementById('slider-image-container').className = 'slider-unfade'}, 500);
+            setPhotoChange(true);
+            //setTimeout(() => {document.getElementById('slider-image-container').className = 'slider-unfade'}, 500);
             if(document.getElementById(change) != null) {
                 document.getElementById(reset).className = 'slider-dot-open';
                 document.getElementById(change).className = 'slider-dot-closed';
@@ -56,6 +59,14 @@ function Slider() {
         }
     }, [count, beginSlide]);
     
+    useEffect(() => {
+        if(photoChange && imageLoaded)
+        {
+            document.getElementById('slider-image-container').className = 'slider-unfade';
+            setPhotoChange(false);
+            setImageLoaded(false);
+        }
+    }, [photoChange, imageLoaded]);
 
     return (
         <div id='slider'>
